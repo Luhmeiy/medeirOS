@@ -1,8 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Poppins } from "next/font/google";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 const poppins = Poppins({
 	subsets: ["latin"],
@@ -20,14 +21,16 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body
-				className={`h-dvh flex justify-center bg-zinc-950 py-[6.25rem] text-zinc-50 ${poppins.className}`}
+				className={`h-dvh flex justify-center bg-zinc-100 dark:bg-zinc-950 py-[6.25rem] text-zinc-950 dark:text-zinc-50 ${poppins.className}`}
 			>
 				<div className="h-full w-4/5 flex flex-col gap-3">
-					<Header />
-					{children}
-					<Footer />
+					<ThemeProvider attribute="class" defaultTheme="dark">
+						<Header />
+						{children}
+						<Footer />
+					</ThemeProvider>
 				</div>
 			</body>
 		</html>

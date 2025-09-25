@@ -22,7 +22,7 @@ export default function Home() {
 				</p>
 			</WideDiv>
 
-			<div className="relative flex flex-col justify-end gap-3 row-span-2 bg-zinc-900 p-9 rounded-lg">
+			<div className="relative flex flex-col justify-end gap-3 row-span-2 bg-zinc-50 dark:bg-zinc-900 p-9 rounded-lg">
 				<h2>Project name</h2>
 				<CircularButton link="" top />
 			</div>
@@ -37,7 +37,7 @@ export default function Home() {
 				link="https://github.com/Luhmeiy"
 			/>
 
-			<div className="flex justify-center items-center bg-zinc-900 p-9 rounded-lg">
+			<div className="flex justify-center items-center bg-zinc-50 dark:bg-zinc-900 p-9 rounded-lg">
 				<Image
 					src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
 					alt="React icon"
