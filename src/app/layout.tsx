@@ -22,11 +22,13 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`h-dvh flex flex-col justify-between bg-zinc-950 px-[11.25rem] py-[6.25rem] text-zinc-50 ${poppins.className}`}
+				className={`h-dvh flex justify-center bg-zinc-950 py-[6.25rem] text-zinc-50 ${poppins.className}`}
 			>
-				<Header />
-				{children}
-				<Footer />
+				<div className="h-full w-4/5 flex flex-col gap-3">
+					<Header />
+					{children}
+					<Footer />
+				</div>
 			</body>
 		</html>
 	);

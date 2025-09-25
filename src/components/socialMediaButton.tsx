@@ -1,0 +1,28 @@
+import Image from "next/image";
+import CircularButton from "./circularButton";
+
+const SocialMediaButton = ({
+	background,
+	socialMedia,
+	link,
+}: {
+	background: string;
+	socialMedia: string;
+	link: string;
+}) => {
+	return (
+		<div
+			className={`relative flex justify-center items-center ${background} rounded-lg`}
+		>
+			<CircularButton link={link} />
+			<Image
+				src={`/${socialMedia.toLowerCase()}.svg`}
+				alt={`${socialMedia} icon`}
+				height={100}
+				width={100}
+			/>
+		</div>
+	);
+};
+
+export default SocialMediaButton;
