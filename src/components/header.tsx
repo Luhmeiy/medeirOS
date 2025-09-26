@@ -1,18 +1,8 @@
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
+import DateTimeDisplay from "./dateTimeDisplay";
 
 const Header = () => {
-	const locale = useLocale();
 	const t = useTranslations("Header");
-
-	const date = new Date().toLocaleDateString(locale, {
-		hour: "2-digit",
-		minute: "2-digit",
-		day: "2-digit",
-		month: "2-digit",
-		year: "numeric",
-	});
-
-	const time = date.split(",").reverse().join(" - ");
 
 	return (
 		<div className="flex justify-between text-[1.75rem] font-extralight">
@@ -23,7 +13,7 @@ const Header = () => {
 					),
 				})}
 			</p>
-			<p>{time}</p>
+			<DateTimeDisplay />
 		</div>
 	);
 };
