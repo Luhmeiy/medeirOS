@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 import CircularButton from "@/components/circularButton";
 import RectangularButton from "@/components/rectangularButton";
@@ -30,7 +31,9 @@ export default function Home() {
 			</div>
 
 			<WideDiv title={t("projects.title")}>
-				<RectangularButton text={t("projects.button")} />
+				<Link href="/projects">
+					<RectangularButton text={t("projects.button")} />
+				</Link>
 			</WideDiv>
 
 			<SocialMediaButton
