@@ -1,5 +1,10 @@
+import { useLocale, useTranslations } from "next-intl";
+
 const Header = () => {
-	const date = new Date().toLocaleDateString("pt-BR", {
+	const locale = useLocale();
+	const t = useTranslations("Header");
+
+	const date = new Date().toLocaleDateString(locale, {
 		hour: "2-digit",
 		minute: "2-digit",
 		day: "2-digit",
@@ -12,7 +17,11 @@ const Header = () => {
 	return (
 		<div className="flex justify-between text-[1.75rem] font-extralight">
 			<p>
-				Hi, I'm medeir<span className="font-black">OS</span>
+				{t.rich("title", {
+					span: (chunks) => (
+						<span className="font-black">{chunks}</span>
+					),
+				})}
 			</p>
 			<p>{time}</p>
 		</div>

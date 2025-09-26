@@ -1,24 +1,26 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import CircularButton from "@/components/circularButton";
 import RectangularButton from "@/components/rectangularButton";
 import SocialMediaButton from "@/components/socialMediaButton";
 import WideDiv from "@/components/wideDiv";
 
 export default function Home() {
+	const t = useTranslations("HomePage");
+
 	return (
 		<div className="grid grid-cols-4 grid-rows-3 gap-6">
 			<div className="flex justify-center items-center bg-zinc-50 rounded-lg">
 				<p className="text-6xl">👀</p>
 			</div>
 
-			<WideDiv title="About me">
+			<WideDiv title={t("about.title")}>
 				<p>
-					Ahoy, I'm{" "}
-					<span className="font-semibold">
-						Luiz Henrique Medeiros
-					</span>
-					, a frontend developer from Brazil. I’m constantly learning
-					new things and falling into tech rabbit holes.
+					{t.rich("about.text", {
+						span: (chunks) => (
+							<span className="font-semibold">{chunks}</span>
+						),
+					})}
 				</p>
 			</WideDiv>
 
@@ -27,8 +29,8 @@ export default function Home() {
 				<CircularButton link="" top />
 			</div>
 
-			<WideDiv title="Explore my projects">
-				<RectangularButton text="Take me there" />
+			<WideDiv title={t("projects.title")}>
+				<RectangularButton text={t("projects.button")} />
 			</WideDiv>
 
 			<SocialMediaButton
@@ -52,13 +54,9 @@ export default function Home() {
 				link="https://www.linkedin.com/in/luhmeiy/"
 			/>
 
-			<WideDiv title="Get in touch">
-				<p>
-					Want to say something nice? Collaborate on a project? Just
-					geek out? Send me an email :)
-				</p>
-
-				<RectangularButton text="Contact me" />
+			<WideDiv title={t("social.title")}>
+				<p>{t("social.text")}</p>
+				<RectangularButton text={t("social.button")} />
 			</WideDiv>
 		</div>
 	);

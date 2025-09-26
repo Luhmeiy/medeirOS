@@ -1,0 +1,26 @@
+{
+	"Header": {
+		"title": "Olá, eu sou medeir<span>OS</span>"
+	},
+	"HomePage": {
+		"about": {
+			"title": "Sobre mim",
+			"text": "Ahoy, eu sou o <span>Luiz Henrique Medeiros</span>, um desenvolvedor frontend do Brasil. Eu sou constantemente aprendendo coisas novas e caindo em buracos de coelho sobre tecnologia."
+		},
+		"projects": {
+			"title": "Explore meus projetos",
+			"button": "Leve-me até lá"
+		},
+		"social": {
+			"title": "Entre em contato",
+			"text": "Quer dizer algo legal? Colaborar em um projeto? Só jogar conversa fora? Me manda um e-mail :)",
+			"button": "Contate-me"
+		}
+	},
+	"Footer": {
+		"languages": {
+			"en": "Inglês",
+			"pt": "Português"
+		}
+	}
+}
