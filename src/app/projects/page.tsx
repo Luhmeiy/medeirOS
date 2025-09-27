@@ -1,33 +1,29 @@
 import ProjectCard from "@/components/projectCard";
+import dbConnect from "@/lib/dbConnect";
+import Project from "@/models/Project";
 
-const badges = [
-	{
-		url: "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
-		alt: "React",
-	},
-	{
-		url: "https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white",
-		alt: "TypeScript",
-	},
-	{
-		url: "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white",
-		alt: "MongoDB",
-	},
-	{
-		url: "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB",
-		alt: "Express",
-	},
-];
+const getProjects = async () => {
+	try {
+		await dbConnect();
 
-const Projects = () => {
+		const projects = await Project.find().populate("badges");
+
+		return projects;
+	} catch (error) {
+		console.error("Error fetching projects:", error);
+		return [];
+	}
+};
+
+const Projects = async () => {
+	const projects = await getProjects();
+
 	return (
 		<div className="min-w-dvw ml-[calc(-50vw+50%)] flex-1">
 			<div className="h-full flex gap-9 overflow-y-scroll px-[10%]">
-				<ProjectCard title="Project name" link="" badges={badges} />
-				<ProjectCard title="Project name" link="" badges={badges} />
-				<ProjectCard title="Project name" link="" badges={badges} />
-				<ProjectCard title="Project name" link="" badges={badges} />
-				<ProjectCard title="Project name" link="" badges={badges} />
+				{projects.map((project) => (
+					<ProjectCard key={project.title} project={project} />
+				))}
 			</div>
 		</div>
 	);
