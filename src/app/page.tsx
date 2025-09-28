@@ -1,13 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
-import CircularButton from "@/components/circularButton";
+import { getTranslations } from "next-intl/server";
+import ProjectCard from "@/components/projectCard";
 import RectangularButton from "@/components/rectangularButton";
 import SocialMediaButton from "@/components/socialMediaButton";
 import WideDiv from "@/components/wideDiv";
+import dbConnect from "@/lib/dbConnect";
+import Project from "@/models/Project";
 
-export default function Home() {
-	const t = useTranslations("HomePage");
+const getProjectById = async (id: string) => {
+	try {
+		await dbConnect();
+
+		const project = await Project.findById(id).populate("badges");
+
+		return project;
+	} catch (error) {
+		console.error("Error fetching projects:", error);
+		return [];
+	}
+};
+
+const Home = async () => {
+	const t = await getTranslations("HomePage");
+	const project = await getProjectById(t("highlight_project"));
 
 	return (
 		<div className="grid grid-cols-4 grid-rows-3 gap-6">
@@ -25,10 +41,7 @@ export default function Home() {
 				</p>
 			</WideDiv>
 
-			<div className="relative flex flex-col justify-end gap-3 row-span-2 bg-zinc-50 dark:bg-zinc-900 p-9 rounded-lg">
-				<h2>Project name</h2>
-				<CircularButton link="" top />
-			</div>
+			<ProjectCard project={project} landingPage />
 
 			<WideDiv title={t("projects.title")}>
 				<Link href="/projects">
@@ -63,4 +76,6 @@ export default function Home() {
 			</WideDiv>
 		</div>
 	);
-}
+};
+
+export default Home;

@@ -45,7 +45,7 @@ const LanguageSwitcher = () => {
 					side="top"
 					align="end"
 					sideOffset={5}
-					className="bg-zinc-50 dark:bg-zinc-900 flex flex-col px-2 py-2 rounded-lg text-[1.75rem] font-extralight transition-colors"
+					className="bg-zinc-50 dark:bg-zinc-900 flex flex-col px-2 py-2 rounded-lg text-[1.75rem] font-extralight transition-colors z-20"
 				>
 					{languagesAbbr.map((language) => (
 						<button

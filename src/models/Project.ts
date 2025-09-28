@@ -3,7 +3,7 @@ import "./Badge.ts";
 
 const projectSchema = new mongoose.Schema({
 	_id: {
-		type: mongoose.Schema.Types.UUID,
+		type: mongoose.Schema.Types.ObjectId,
 		required: true,
 	},
 	title: String,

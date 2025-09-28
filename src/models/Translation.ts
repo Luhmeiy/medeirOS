@@ -20,6 +20,7 @@ const translationSchema = new mongoose.Schema({
 			text: String,
 			button: String,
 		},
+		higlight_project: String,
 	},
 	Footer: {
 		languages: {
