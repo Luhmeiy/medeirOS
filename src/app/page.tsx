@@ -41,7 +41,10 @@ const Home = async () => {
 				</p>
 			</WideDiv>
 
-			<ProjectCard project={project} landingPage />
+			<ProjectCard
+				project={JSON.parse(JSON.stringify(project))}
+				landingPage
+			/>
 
 			<WideDiv title={t("projects.title")}>
 				<Link href="/projects">

@@ -1,4 +1,4 @@
-import CircularButton from "./circularButton";
+import ProjectWindow from "./projectWindow";
 import { IProject } from "@/interfaces/Project";
 
 const ProjectCard = ({
@@ -21,7 +21,7 @@ const ProjectCard = ({
 		>
 			<div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-transparent to-zinc-950/90 opacity-80 rounded-lg pointer-events-none"></div>
 
-			<CircularButton link="" top />
+			<ProjectWindow project={project} />
 			<h2 className="z-10 text-zinc-50">{project.title}</h2>
 
 			<div

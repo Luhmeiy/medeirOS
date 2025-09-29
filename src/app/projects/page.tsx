@@ -22,7 +22,10 @@ const Projects = async () => {
 		<div className="min-w-dvw ml-[calc(-50vw+50%)] flex-1">
 			<div className="h-full flex gap-9 overflow-y-scroll px-[10%]">
 				{projects.map((project) => (
-					<ProjectCard key={project.title} project={project} />
+					<ProjectCard
+						key={project.title}
+						project={JSON.parse(JSON.stringify(project))}
+					/>
 				))}
 			</div>
 		</div>
