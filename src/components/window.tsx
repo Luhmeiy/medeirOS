@@ -38,7 +38,7 @@ const Window = ({
 						ref={nodeRef}
 						className={`fixed ${
 							!isFullScreen && "w-6xl h-2/3 rounded-lg"
-						} flex flex-col bg-zinc-50 dark:bg-zinc-900 pb-9 inset-0 m-auto z-30`}
+						} bg-zinc-50 dark:bg-zinc-900 ring-2 ring-zinc-200/60 dark:ring-zinc-800 flex flex-col pb-9 inset-0 m-auto z-30 transition-all duration-300`}
 					>
 						<div className="handle w-full flex gap-3 justify-end pr-5 py-4">
 							<ControlIcon

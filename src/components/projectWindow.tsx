@@ -10,7 +10,7 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 	return (
 		<Window
 			button={
-				<button className="absolute right-3 top-3 bg-zinc-50 p-3 rounded-full cursor-pointer">
+				<button className="absolute right-3 top-3 bg-white hover:ring-4 ring-white/60 p-3 rounded-full cursor-pointer transition-shadow duration-300">
 					<ArrowUpRightIcon size={20} weight="bold" color="black" />
 				</button>
 			}
@@ -40,7 +40,7 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 							<a
 								href={project.github}
 								target="_blank"
-								className="bg-zinc-50 flex gap-2 px-3 py-1 text-zinc-950 rounded"
+								className="bg-white ring-2 hover:ring-4 ring-zinc-200/60 flex gap-2 px-3 py-1 text-zinc-950 rounded transition-shadow duration-300"
 							>
 								<Image
 									src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
@@ -55,7 +55,7 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 								<a
 									href={project.preview}
 									target="_blank"
-									className="bg-zinc-50 flex gap-2 px-3 py-1 text-zinc-950 rounded"
+									className="bg-white ring-2 hover:ring-4 ring-zinc-200/60 flex gap-2 px-3 py-1 text-zinc-950 rounded transition-shadow duration-300"
 								>
 									<MonitorIcon size={24} weight="bold" />
 									Live preview

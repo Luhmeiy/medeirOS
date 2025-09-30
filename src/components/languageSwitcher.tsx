@@ -28,7 +28,7 @@ const LanguageSwitcher = () => {
 		<Root open={isOpen}>
 			<Trigger asChild>
 				<button
-					className="bg-zinc-50 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 flex items-center gap-1 px-3 cursor-pointer rounded-lg text-[1.75rem] font-extralight outline-none transition-colors"
+					className="bg-white dark:bg-zinc-900 ring-2 hover:ring-4 ring-zinc-200/60 dark:ring-zinc-800 flex items-center gap-1 px-3 cursor-pointer rounded-lg text-[1.75rem] font-extralight outline-none transition-all duration-300"
 					onClick={() => setIsOpen(!isOpen)}
 				>
 					{t(`languages.${locale}`)}
@@ -44,14 +44,14 @@ const LanguageSwitcher = () => {
 				<Content
 					side="top"
 					align="end"
-					sideOffset={5}
-					className="bg-zinc-50 dark:bg-zinc-900 flex flex-col px-2 py-2 rounded-lg text-[1.75rem] font-extralight transition-colors z-20"
+					sideOffset={8}
+					className="bg-white dark:bg-zinc-900 ring-2 ring-zinc-200/60 dark:ring-zinc-800 flex flex-col px-2 py-2 rounded-lg text-[1.75rem] font-extralight transition-colors z-20"
 				>
 					{languagesAbbr.map((language) => (
 						<button
 							key={language}
 							onClick={() => switchLanguage(language)}
-							className="text-start hover:bg-zinc-200 dark:hover:bg-zinc-800 px-2 outline-none cursor-pointer transition-colors"
+							className="text-start hover:bg-zinc-200 dark:hover:bg-zinc-800 px-2 rounded outline-none cursor-pointer transition-colors"
 						>
 							{t(`languages.${language}`)}
 						</button>

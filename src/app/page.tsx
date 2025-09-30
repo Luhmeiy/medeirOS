@@ -27,7 +27,7 @@ const Home = async () => {
 
 	return (
 		<div className="grid grid-cols-4 grid-rows-3 gap-6">
-			<div className="flex justify-center items-center bg-zinc-50 rounded-lg">
+			<div className="bg-zinc-50 dark:ring-2 dark:ring-zinc-800 flex justify-center items-center shadow-md rounded-lg transition-all duration-300">
 				<p className="text-6xl">👀</p>
 			</div>
 

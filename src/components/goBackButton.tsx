@@ -13,7 +13,7 @@ const GoBackButton = () => {
 			{isProjectsPage ? (
 				<Link
 					href="/"
-					className="bg-zinc-50 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 flex items-center gap-2 px-3 cursor-pointer rounded-lg text-[1.75rem] font-extralight outline-none transition-colors"
+					className="bg-white dark:bg-zinc-900 ring-2 hover:ring-4 ring-zinc-200/60 dark:ring-zinc-800 flex items-center gap-2 px-3 cursor-pointer rounded-lg text-[1.75rem] font-extralight outline-none transition-all duration-300"
 				>
 					<ArrowLeftIcon size={24} />
 					Go back

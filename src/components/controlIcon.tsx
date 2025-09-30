@@ -13,7 +13,7 @@ const ControlIcon = ({
 		<Icon
 			size={16}
 			weight="bold"
-			className="text-zinc-300 hover:text-zinc-950 dark:text-zinc-600 dark:hover:text-zinc-50 cursor-pointer transition-colors"
+			className="text-zinc-300 hover:text-zinc-950 dark:text-zinc-600 dark:hover:text-zinc-50 cursor-pointer transition-colors duration-300"
 			onClick={onClick}
 		/>
 	);
