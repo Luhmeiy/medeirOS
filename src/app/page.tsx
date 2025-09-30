@@ -1,8 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import ProjectCard from "@/components/projectCard";
 import RectangularButton from "@/components/rectangularButton";
+import SkillsWindow from "@/components/skillsWindow";
 import SocialMediaButton from "@/components/socialMediaButton";
 import WideDiv from "@/components/wideDiv";
 import dbConnect from "@/lib/dbConnect";
@@ -58,14 +58,7 @@ const Home = async () => {
 				link="https://github.com/Luhmeiy"
 			/>
 
-			<div className="flex justify-center items-center bg-zinc-50 dark:bg-zinc-900 p-9 rounded-lg">
-				<Image
-					src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-					alt="React icon"
-					height={140}
-					width={140}
-				/>
-			</div>
+			<SkillsWindow />
 
 			<SocialMediaButton
 				background="bg-[#0A66C2]"
