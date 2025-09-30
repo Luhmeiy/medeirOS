@@ -2,6 +2,23 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+	--animate-scroll: scroll 20s linear infinite;
+
+	@keyframes scroll {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-100%);
+		}
+	}
+}
+
+@utility animate-pause {
+	animation-play-state: paused;
+}
+
 h2 {
 	font-size: 1.75rem;
 	font-weight: 900;

@@ -1,6 +1,7 @@
 import Image from "next/image";
+import SkillsCarousel from "./skillsCarousel";
 import Window from "./window";
-import { ISkillGroup } from "@/interfaces/Skill";
+import { ISkill, ISkillGroup } from "@/interfaces/Skill";
 import dbConnect from "@/lib/dbConnect";
 import Skill from "@/models/Skill";
 
@@ -8,42 +9,16 @@ const getSkills = async () => {
 	try {
 		await dbConnect();
 
-		return await Skill.aggregate([
-			{
-				$facet: {
-					frontend: [
-						{ $match: { category: "frontend" } },
-						{ $sort: { order: 1 } },
-					],
-					backend: [
-						{ $match: { category: "backend" } },
-						{ $sort: { order: 1 } },
-					],
-					tools: [
-						{ $match: { category: "tools" } },
-						{ $sort: { order: 1 } },
-					],
-				},
-			},
-			{
-				$project: {
-					categories: [
-						{
-							title: "Frontend",
-							skills: "$frontend",
-						},
-						{
-							title: "Backend",
-							skills: "$backend",
-						},
-						{
-							title: "Tools",
-							skills: "$tools",
-						},
-					],
-				},
-			},
-		]);
+		const skills = await Skill.find();
+
+		const categories = Object.entries(
+			Object.groupBy(skills, (skill) => skill.category)
+		).map(([category, skills]) => ({
+			title: category.charAt(0).toUpperCase() + category.slice(1),
+			skills,
+		}));
+
+		return { categories, skills };
 	} catch (error) {
 		console.error("Error fetching skills:", error);
 		return [];
@@ -51,18 +26,14 @@ const getSkills = async () => {
 };
 
 const SkillsWindow = async () => {
-	const { categories } = (
-		(await getSkills()) as { categories: ISkillGroup[] }[]
-	)[0];
+	const { categories, skills } = (await getSkills()) as {
+		categories: ISkillGroup[];
+		skills: ISkill[];
+	};
 
 	return (
-		<div className="group relative flex justify-center items-center bg-zinc-50 dark:bg-zinc-900 p-9 rounded-lg">
-			<Image
-				src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-				alt="React icon"
-				height={140}
-				width={140}
-			/>
+		<div className="group relative flex items-center bg-zinc-50 dark:bg-zinc-900 p-9 rounded-lg overflow-hidden">
+			<SkillsCarousel skills={JSON.parse(JSON.stringify(skills))} />
 
 			<div className="group-hover:bg-zinc-50/80 group-hover:dark:bg-zinc-900/80 absolute bg-transparent inset-0 pointer-events-none transition-colors" />
 

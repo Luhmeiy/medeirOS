@@ -1,4 +1,4 @@
-interface ISkill {
+export interface ISkill {
 	icon: string;
 	alt: string;
 }
