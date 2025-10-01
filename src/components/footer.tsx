@@ -7,7 +7,7 @@ const Footer = () => {
 		<div className="w-long flex items-center justify-between gap-6 self-center">
 			<GoBackButton />
 
-			<div className="flex gap-6">
+			<div className="flex gap-3">
 				<LanguageSwitcher />
 				<ThemeToggle />
 			</div>

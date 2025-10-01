@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
 import ProjectCard from "@/components/projectCard";
 import RectangularButton from "@/components/rectangularButton";
 import SkillsWindow from "@/components/skillsWindow";
@@ -47,9 +47,14 @@ const Home = async () => {
 			/>
 
 			<WideDiv title={t("projects.title")}>
-				<Link href="/projects">
-					<RectangularButton text={t("projects.button")} />
-				</Link>
+				<RectangularButton href="/projects" isLink>
+					{t("projects.button")}
+					<ArrowUpRightIcon
+						size={16}
+						weight="bold"
+						className="group-hover:rotate-45 transition-transform duration-300"
+					/>
+				</RectangularButton>
 			</WideDiv>
 
 			<SocialMediaButton
@@ -68,7 +73,15 @@ const Home = async () => {
 
 			<WideDiv title={t("social.title")}>
 				<p>{t("social.text")}</p>
-				<RectangularButton text={t("social.button")} />
+
+				<RectangularButton href="mailto:medeiros.luizhenrique@proton.me">
+					{t("social.button")}
+					<ArrowUpRightIcon
+						size={16}
+						weight="bold"
+						className="group-hover:rotate-45 transition-transform duration-300"
+					/>
+				</RectangularButton>
 			</WideDiv>
 		</div>
 	);

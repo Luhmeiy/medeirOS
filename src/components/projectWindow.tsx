@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useLocale } from "next-intl";
 import { ArrowUpRightIcon, MonitorIcon } from "@phosphor-icons/react/dist/ssr";
+import RectangularButton from "./rectangularButton";
 import Window from "./window";
 import { IProject } from "@/interfaces/Project";
 
@@ -48,29 +49,22 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 						</p>
 
 						<div className="flex gap-3">
-							<a
-								href={project.github}
-								target="_blank"
-								className="bg-white ring-2 hover:ring-4 ring-zinc-200/60 flex gap-2 px-3 py-1 text-zinc-950 rounded transition-shadow duration-300"
-							>
+							<RectangularButton href={project.github}>
 								<Image
-									src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+									src="/github.svg"
 									alt="GitHub icon"
 									height={20}
 									width={20}
+									className="invert dark:invert-0"
 								/>
 								Source code
-							</a>
+							</RectangularButton>
 
 							{project.preview && (
-								<a
-									href={project.preview}
-									target="_blank"
-									className="bg-white ring-2 hover:ring-4 ring-zinc-200/60 flex gap-2 px-3 py-1 text-zinc-950 rounded transition-shadow duration-300"
-								>
+								<RectangularButton href={project.preview}>
 									<MonitorIcon size={24} weight="bold" />
 									Live preview
-								</a>
+								</RectangularButton>
 							)}
 						</div>
 					</div>
