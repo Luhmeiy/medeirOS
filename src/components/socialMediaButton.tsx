@@ -12,7 +12,7 @@ const SocialMediaButton = ({
 }) => {
 	return (
 		<div
-			className={`relative dark:ring-2 dark:ring-zinc-800 flex justify-center items-center ${background} shadow-md rounded-lg transition-shadow duration-300`}
+			className={`w-default relative dark:ring-2 dark:ring-zinc-800 flex justify-center items-center ${background} shadow-md rounded-lg transition-shadow duration-300 aspect-square`}
 		>
 			<CircularButton link={link} background={background} />
 			<Image

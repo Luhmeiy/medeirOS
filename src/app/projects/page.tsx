@@ -19,8 +19,8 @@ const Projects = async () => {
 	const projects = await getProjects();
 
 	return (
-		<div className="min-w-dvw ml-[calc(-50vw+50%)] flex-1">
-			<div className="h-full flex gap-9 overflow-y-scroll px-[10%]">
+		<div className="min-w-dvw ml-[calc(-50vw+50%)]">
+			<div className="flex gap-9 overflow-y-scroll px-[calc((100vw-var(--spacing-long))/2)]">
 				{projects.map((project) => (
 					<ProjectCard
 						key={project.title}

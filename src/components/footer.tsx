@@ -4,7 +4,7 @@ import ThemeToggle from "./themeToggle";
 
 const Footer = () => {
 	return (
-		<div className="flex items-center justify-between gap-6">
+		<div className="w-long flex items-center justify-between gap-6 self-center">
 			<GoBackButton />
 
 			<div className="flex gap-6">

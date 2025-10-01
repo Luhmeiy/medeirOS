@@ -32,7 +32,7 @@ const SkillsWindow = async () => {
 	};
 
 	return (
-		<div className="group relative bg-zinc-50 dark:bg-zinc-900 dark:ring-2 dark:ring-zinc-800 flex items-center p-9 shadow-md rounded-lg overflow-hidden transition-all duration-300">
+		<div className="w-default group relative bg-zinc-50 dark:bg-zinc-900 dark:ring-2 dark:ring-zinc-800 flex items-center p-9 shadow-md rounded-lg overflow-hidden transition-all duration-300 aspect-square">
 			<SkillsCarousel skills={JSON.parse(JSON.stringify(skills))} />
 
 			<div className="group-hover:bg-zinc-50/80 group-hover:dark:bg-zinc-900/80 absolute bg-transparent inset-0 pointer-events-none transition-colors" />

@@ -3,6 +3,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+	--spacing-default: 26dvh;
+	--spacing-double: calc(var(--spacing-default) * 2 + 1rem);
+	--spacing-long: calc(var(--spacing-default) * 4 + 3rem);
+	--spacing-tall: calc(var(--spacing-default) * 3 + 2rem);
+
 	--animate-scroll: scroll 20s linear infinite;
 
 	@keyframes scroll {

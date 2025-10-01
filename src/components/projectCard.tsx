@@ -12,7 +12,9 @@ const ProjectCard = ({
 		<div
 			style={{ backgroundColor: project.bg_color }}
 			className={`group ${
-				landingPage ? "row-span-2" : "min-w-96 w-96 flex-shrink-0"
+				landingPage
+					? "w-default row-span-2"
+					: "min-w-96 w-96 h-tall flex-shrink-0"
 			} relative dark:ring-2 dark:ring-zinc-800 flex flex-col justify-end gap-3 ${
 				!project.bg_color && "bg-zinc-50 dark:bg-zinc-900"
 			}  p-9 shadow-md rounded-lg transition-all duration-300`}
