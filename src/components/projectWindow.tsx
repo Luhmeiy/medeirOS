@@ -10,8 +10,19 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 	return (
 		<Window
 			button={
-				<button className="absolute right-3 top-3 bg-white hover:ring-4 ring-white/60 p-3 rounded-full cursor-pointer transition-shadow duration-300">
-					<ArrowUpRightIcon size={20} weight="bold" color="black" />
+				<button
+					style={
+						{
+							"--background-color": project.bg_color,
+						} as React.CSSProperties
+					}
+					className="inverted-corner group/button absolute -right-1 -top-1 bg-zinc-100 dark:bg-zinc-950 border-t-4 border-r-4 border-t-zinc-100 dark:border-t-zinc-950 border-r-zinc-100 dark:border-r-zinc-950 p-5 text-black dark:text-white rounded-bl-lg cursor-pointer transition-colors duration-300"
+				>
+					<ArrowUpRightIcon
+						size={24}
+						weight="bold"
+						className="group-hover/button:rotate-45 transition-transform duration-300"
+					/>
 				</button>
 			}
 		>
@@ -28,7 +39,7 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 					</div>
 				</div>
 
-				<hr className="border-zinc-200 dark:border-zinc-700 border-2" />
+				<hr className="border-zinc-200 dark:border-zinc-700 border-2 transition-colors duration-300" />
 
 				<div className="grid grid-cols-2 gap-9">
 					<div className="flex flex-col gap-4">
