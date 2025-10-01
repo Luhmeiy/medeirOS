@@ -16,7 +16,7 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 							"--background-color": project.bg_color,
 						} as React.CSSProperties
 					}
-					className="inverted-corner group/button absolute -right-1 -top-1 bg-zinc-100 dark:bg-zinc-950 border-t-4 border-r-4 border-t-zinc-100 dark:border-t-zinc-950 border-r-zinc-100 dark:border-r-zinc-950 p-5 text-black dark:text-white rounded-bl-lg cursor-pointer transition-colors duration-300"
+					className="inverted-tr-corners group/button absolute -right-1 -top-1 bg-zinc-100 dark:bg-zinc-950 border-t-4 border-r-4 border-t-zinc-100 dark:border-t-zinc-950 border-r-zinc-100 dark:border-r-zinc-950 p-5 text-black dark:text-white rounded-bl-lg cursor-pointer transition-colors duration-300"
 				>
 					<ArrowUpRightIcon
 						size={24}
