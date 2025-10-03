@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr";
+import FollowingEyes from "@/components/followingEyes";
 import ProjectCard from "@/components/projectCard";
 import RectangularButton from "@/components/rectangularButton";
 import SkillsWindow from "@/components/skillsWindow";
@@ -27,9 +28,7 @@ const Home = async () => {
 
 	return (
 		<div className="grid grid-cols-4 grid-rows-3 gap-4">
-			<div className="w-default bg-zinc-50 dark:ring-2 dark:ring-zinc-800 flex justify-center items-center shadow-md rounded-lg transition-all duration-300 aspect-square">
-				<p className="text-6xl">👀</p>
-			</div>
+			<FollowingEyes />
 
 			<WideDiv title={t("about.title")}>
 				<p>
