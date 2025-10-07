@@ -10,6 +10,7 @@ const projectSchema = new mongoose.Schema({
 	bg_color: String,
 	github: String,
 	preview: String,
+	order: Number,
 	translations: {
 		en: {
 			summary: String,

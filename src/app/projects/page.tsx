@@ -6,7 +6,7 @@ const getProjects = async () => {
 	try {
 		await dbConnect();
 
-		const projects = await Project.find().populate("badges");
+		const projects = await Project.find().sort("order").populate("badges");
 
 		return projects;
 	} catch (error) {

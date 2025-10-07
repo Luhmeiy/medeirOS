@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { ArrowUpRightIcon, MonitorIcon } from "@phosphor-icons/react/dist/ssr";
 import RectangularButton from "./rectangularButton";
 import Window from "./window";
@@ -7,6 +7,7 @@ import { IProject } from "@/interfaces/Project";
 
 const ProjectWindow = ({ project }: { project: IProject }) => {
 	const locale = useLocale() as "en" | "pt";
+	const t = useTranslations("Project");
 
 	return (
 		<Window
@@ -57,13 +58,13 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 									width={20}
 									className="invert dark:invert-0"
 								/>
-								Source code
+								{t("github")}
 							</RectangularButton>
 
 							{project.preview && (
 								<RectangularButton href={project.preview}>
 									<MonitorIcon size={24} weight="bold" />
-									Live preview
+									{t("preview")}
 								</RectangularButton>
 							)}
 						</div>
