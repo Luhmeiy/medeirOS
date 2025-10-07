@@ -25,7 +25,7 @@
 }
 
 @utility base-inverted-corners {
-	background-color: var(--background-color);
+	background-color: transparent;
 	content: "";
 	height: 15px;
 	position: absolute;

@@ -4,6 +4,7 @@ export interface IProject {
 	bg_color: string;
 	github: string;
 	preview: string;
+	thumbnail: string;
 	translations: {
 		[key in "en" | "pt"]: {
 			summary: string;

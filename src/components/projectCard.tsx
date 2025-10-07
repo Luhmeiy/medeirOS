@@ -10,14 +10,17 @@ const ProjectCard = ({
 }) => {
 	return (
 		<div
-			style={{ backgroundColor: project.bg_color }}
+			style={{
+				backgroundColor: project.bg_color,
+				backgroundImage: `url(${project.thumbnail})`,
+			}}
 			className={`group ${
 				landingPage
 					? "w-default row-span-2"
 					: "min-w-96 w-96 h-tall flex-shrink-0"
 			} relative dark:ring-2 dark:ring-zinc-800 flex flex-col justify-end gap-3 ${
 				!project.bg_color && "bg-zinc-50 dark:bg-zinc-900"
-			}  p-9 shadow-md rounded-lg transition-all duration-300`}
+			} bg-center p-9 shadow-md rounded-lg transition-all duration-300`}
 		>
 			<div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-transparent to-zinc-50/40 dark:to-zinc-950/90 opacity-80 rounded-lg pointer-events-none transition-colors" />
 
