@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 
 const Eye = ({ x, y }: { x: string; y: string }) => (
-	<div className="relative w-20 h-20 border-2 border-zinc-950 justify-self-center rounded-full">
+	<div className="relative w-20 h-40 border-2 border-zinc-500 justify-self-center rounded-full">
 		<div
-			className="absolute w-10 h-10 bg-zinc-950 rounded-full"
-			style={{
-				transform: `translate(${x}, ${y})`,
-			}}
-		/>
+			className="absolute w-10 h-20 bg-zinc-800 rounded-full"
+			style={{ transform: `translate(${x}, ${y})` }}
+		>
+			<div className="bg-zinc-50 w-5 h-5 rounded-full" />
+		</div>
 	</div>
 );
 

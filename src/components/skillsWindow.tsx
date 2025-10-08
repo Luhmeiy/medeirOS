@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import SkillsCarousel from "./skillsCarousel";
 import Window from "./window";
 import { ISkill, ISkillGroup } from "@/interfaces/Skill";
@@ -26,6 +27,8 @@ const getSkills = async () => {
 };
 
 const SkillsWindow = async () => {
+	const t = useTranslations("Skills");
+
 	const { categories, skills } = (await getSkills()) as {
 		categories: ISkillGroup[];
 		skills: ISkill[];
@@ -40,13 +43,13 @@ const SkillsWindow = async () => {
 			<Window
 				button={
 					<button className="group-hover:flex absolute hidden items-center justify-center inset-0 font-semibold cursor-pointer">
-						Click me
+						{t("button")}
 					</button>
 				}
 			>
 				<div className="h-full flex flex-col items-center justify-center">
 					<h1 className="text-4xl text-center font-black pb-4">
-						Skills
+						{t("title")}
 					</h1>
 
 					<div className="grid grid-cols-2 gap-x-12 gap-y-8">
