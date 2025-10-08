@@ -1,22 +1,8 @@
 import ProjectCard from "@/components/projectCard";
-import dbConnect from "@/lib/dbConnect";
-import Project from "@/models/Project";
-
-const getProjects = async () => {
-	try {
-		await dbConnect();
-
-		const projects = await Project.find().sort("order").populate("badges");
-
-		return projects;
-	} catch (error) {
-		console.error("Error fetching projects:", error);
-		return [];
-	}
-};
+import { portfolioAPI } from "@/lib/api";
 
 const Projects = async () => {
-	const projects = await getProjects();
+	const projects = await portfolioAPI.getProjects();
 
 	return (
 		<div className="min-w-dvw ml-[calc(-50vw+50%)]">

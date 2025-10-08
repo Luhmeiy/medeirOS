@@ -1,38 +1,12 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import SkillsCarousel from "./skillsCarousel";
 import Window from "./window";
-import { ISkill, ISkillGroup } from "@/interfaces/Skill";
-import dbConnect from "@/lib/dbConnect";
-import Skill from "@/models/Skill";
-
-const getSkills = async () => {
-	try {
-		await dbConnect();
-
-		const skills = await Skill.find();
-
-		const categories = Object.entries(
-			Object.groupBy(skills, (skill) => skill.category)
-		).map(([category, skills]) => ({
-			title: category.charAt(0).toUpperCase() + category.slice(1),
-			skills,
-		}));
-
-		return { categories, skills };
-	} catch (error) {
-		console.error("Error fetching skills:", error);
-		return [];
-	}
-};
+import { portfolioAPI } from "@/lib/api";
 
 const SkillsWindow = async () => {
-	const t = useTranslations("Skills");
-
-	const { categories, skills } = (await getSkills()) as {
-		categories: ISkillGroup[];
-		skills: ISkill[];
-	};
+	const t = await getTranslations("Skills");
+	const { categories, skills } = await portfolioAPI.getSkills();
 
 	return (
 		<div className="w-default group relative bg-zinc-50 dark:bg-zinc-900 dark:ring-2 dark:ring-zinc-800 flex items-center p-9 shadow-md rounded-lg overflow-hidden transition-all duration-300 aspect-square">

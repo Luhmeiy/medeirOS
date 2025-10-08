@@ -6,25 +6,11 @@ import RectangularButton from "@/components/rectangularButton";
 import SkillsWindow from "@/components/skillsWindow";
 import SocialMediaButton from "@/components/socialMediaButton";
 import WideDiv from "@/components/wideDiv";
-import dbConnect from "@/lib/dbConnect";
-import Project from "@/models/Project";
-
-const getProjectById = async (id: string) => {
-	try {
-		await dbConnect();
-
-		const project = await Project.findById(id).populate("badges");
-
-		return project;
-	} catch (error) {
-		console.error("Error fetching projects:", error);
-		return [];
-	}
-};
+import { portfolioAPI } from "@/lib/api";
 
 const Home = async () => {
 	const t = await getTranslations("HomePage");
-	const project = await getProjectById(t("highlight_project"));
+	const project = await portfolioAPI.getProjectById(t("highlight_project"));
 
 	return (
 		<div className="grid grid-cols-4 grid-rows-3 gap-4">
