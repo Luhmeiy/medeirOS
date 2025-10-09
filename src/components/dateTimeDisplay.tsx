@@ -30,7 +30,7 @@ const DateTimeDisplay = () => {
 		return () => clearInterval(interval);
 	}, [locale]);
 
-	return <p>{dateTime}</p>;
+	return <p className="max-phone:hidden">{dateTime}</p>;
 };
 
 export default DateTimeDisplay;

@@ -5,7 +5,7 @@ const Header = () => {
 	const t = useTranslations("Header");
 
 	return (
-		<div className="w-long flex justify-between self-center text-[1.75rem] font-extralight">
+		<div className="w-long flex justify-between max-phone:justify-center self-center text-[1.75rem] font-extralight">
 			<p>
 				{t.rich("title", {
 					span: (chunks) => (

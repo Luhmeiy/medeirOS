@@ -8,6 +8,9 @@
 	--spacing-long: calc(var(--spacing-default) * 4 + 3rem);
 	--spacing-tall: calc(var(--spacing-default) * 3 + 2rem);
 
+	--breakpoint-tablet: 80rem;
+	--breakpoint-phone: 57rem;
+
 	--animate-scroll: scroll 20s linear infinite;
 
 	@keyframes scroll {
@@ -17,6 +20,19 @@
 		to {
 			transform: translateX(-100%);
 		}
+	}
+}
+
+@media (max-width: 80rem) {
+	:root {
+		--spacing-default: 18dvh;
+	}
+}
+
+@media (max-width: 57rem) {
+	:root {
+		--spacing-default: 12rem;
+		--spacing-long: calc(var(--spacing-default) * 2 + 1rem);
 	}
 }
 

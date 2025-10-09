@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 
 const Eye = ({ x, y }: { x: string; y: string }) => (
-	<div className="relative w-20 h-40 border-2 border-zinc-500 justify-self-center rounded-full">
+	<div className="relative w-5/6 h-2/3 border-2 border-zinc-500 justify-self-center rounded-full">
 		<div
-			className="absolute w-10 h-20 bg-zinc-800 rounded-full"
+			className="absolute w-1/2 h-1/2 bg-zinc-800 rounded-full"
 			style={{ transform: `translate(${x}, ${y})` }}
 		>
-			<div className="bg-zinc-50 w-5 h-5 rounded-full" />
+			<div className="bg-zinc-50 w-1/2 rounded-full aspect-square" />
 		</div>
 	</div>
 );
@@ -55,7 +55,7 @@ const FollowingEyes = () => {
 
 	return (
 		<div
-			className="w-default bg-zinc-50 dark:ring-2 dark:ring-zinc-800 grid grid-cols-2 items-center p-9 shadow-md rounded-lg transition-all duration-300 aspect-square"
+			className="w-default bg-zinc-50 dark:ring-2 dark:ring-zinc-800 grid grid-cols-2 items-center gap-4 px-9 shadow-md rounded-lg transition-all duration-300 aspect-square max-phone:row-start-4"
 			id="eyes-container"
 		>
 			<Eye {...pupilPosition} />
