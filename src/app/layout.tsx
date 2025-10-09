@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import { Poppins } from "next/font/google";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { WindowManagerProvider } from "@/components/windowManagerContext";
 
 const poppins = Poppins({
 	subsets: ["latin"],
@@ -29,9 +30,11 @@ export default function RootLayout({
 				<div className="h-full flex flex-col justify-center gap-3">
 					<ThemeProvider attribute="class" defaultTheme="dark">
 						<NextIntlClientProvider>
-							<Header />
-							{children}
-							<Footer />
+							<WindowManagerProvider>
+								<Header />
+								{children}
+								<Footer />
+							</WindowManagerProvider>
 						</NextIntlClientProvider>
 					</ThemeProvider>
 				</div>
