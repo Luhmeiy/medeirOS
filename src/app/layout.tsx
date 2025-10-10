@@ -27,7 +27,7 @@ export default function RootLayout({
 			<body
 				className={`min-h-dvh flex justify-center items-center bg-zinc-100 dark:bg-zinc-950 text-zinc-950 dark:text-zinc-50 ${poppins.className} py-3 transition-colors duration-300 overflow-x-hidden`}
 			>
-				<div className="h-full flex flex-col justify-center gap-3">
+				<div className="h-full flex flex-col justify-center gap-3 max-phone:pb-20">
 					<ThemeProvider attribute="class" defaultTheme="dark">
 						<NextIntlClientProvider>
 							<WindowManagerProvider>

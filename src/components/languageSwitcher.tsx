@@ -3,7 +3,11 @@
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
-import { CaretDownIcon, CaretUpIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+	CaretDownIcon,
+	CaretUpIcon,
+	TranslateIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import { Content, Portal, Root, Trigger } from "@radix-ui/react-popover";
 
 const languagesAbbr = ["en", "pt"];
@@ -28,22 +32,30 @@ const LanguageSwitcher = () => {
 		<Root open={isOpen}>
 			<Trigger asChild>
 				<button
-					className="bg-white dark:bg-zinc-900 ring-2 hover:ring-4 ring-zinc-200/60 dark:ring-zinc-800 flex items-center gap-1 px-3 cursor-pointer rounded-lg text-[1.75rem] font-extralight outline-none transition-all duration-300"
+					className="bg-white dark:bg-zinc-900 ring-2 hover:ring-4 ring-zinc-200/60 dark:ring-zinc-800 cursor-pointer rounded-lg transition-all duration-300"
 					onClick={() => setIsOpen(!isOpen)}
 				>
-					{t(`languages.${locale}`)}
-					{isOpen ? (
-						<CaretUpIcon size={24} />
-					) : (
-						<CaretDownIcon size={24} />
-					)}
+					<div className="flex items-center gap-1 px-3 text-[1.75rem] font-extralight max-phone:hidden">
+						{t(`languages.${locale}`)}
+						{isOpen ? (
+							<CaretUpIcon size={24} />
+						) : (
+							<CaretDownIcon size={24} />
+						)}
+					</div>
+
+					<TranslateIcon
+						size={28}
+						weight="bold"
+						className="m-2 phone:hidden"
+					/>
 				</button>
 			</Trigger>
 
 			<Portal>
 				<Content
 					side="top"
-					align="end"
+					align="center"
 					sideOffset={8}
 					className="bg-white dark:bg-zinc-900 ring-2 ring-zinc-200/60 dark:ring-zinc-800 flex flex-col px-2 py-2 rounded-lg text-[1.75rem] font-extralight transition-colors z-20"
 				>
