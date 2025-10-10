@@ -17,7 +17,7 @@ const ProjectCard = ({
 			className={`group ${
 				landingPage
 					? "w-default row-span-2"
-					: "min-w-96 w-96 h-tall flex-shrink-0"
+					: "h-tall max-tablet:h-long max-phone:h-long shrink-0 aspect-5/12 max-phone:aspect-square"
 			} relative dark:ring-2 dark:ring-zinc-800 flex flex-col justify-end gap-3 ${
 				!project.bg_color && "bg-zinc-50 dark:bg-zinc-900"
 			} bg-center bg-cover p-9 shadow-md rounded-lg transition-all duration-300`}
@@ -29,11 +29,7 @@ const ProjectCard = ({
 				{project.title}
 			</h2>
 
-			<div
-				className={`${
-					!landingPage && "w-80"
-				} flex gap-2 flex-wrap max-h-16 group-hover:max-h-none overflow-hidden transition-all z-10`}
-			>
+			<div className="flex gap-2 flex-wrap max-h-16 group-hover:max-h-none overflow-hidden transition-all z-10">
 				{project.badges.map(({ alt, url }, index) => (
 					<img key={index} src={url} alt={alt} />
 				))}

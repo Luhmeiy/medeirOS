@@ -25,7 +25,7 @@ export default function RootLayout({
 	return (
 		<html suppressHydrationWarning>
 			<body
-				className={`h-dvh max-phone:h-auto flex justify-center items-center bg-zinc-100 dark:bg-zinc-950 text-zinc-950 dark:text-zinc-50 ${poppins.className} py-10 transition-colors duration-300 overflow-x-hidden`}
+				className={`min-h-dvh flex justify-center items-center bg-zinc-100 dark:bg-zinc-950 text-zinc-950 dark:text-zinc-50 ${poppins.className} py-3 transition-colors duration-300 overflow-x-hidden`}
 			>
 				<div className="h-full flex flex-col justify-center gap-3">
 					<ThemeProvider attribute="class" defaultTheme="dark">
