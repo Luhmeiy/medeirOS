@@ -36,8 +36,8 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 
 				<hr className="border-zinc-200 dark:border-zinc-700 border-2 transition-colors duration-300" />
 
-				<div className="grid grid-cols-2 gap-9">
-					<div className="flex flex-col gap-4">
+				<div className="grid xs:grid-cols-2 gap-9 max-xs:gap-6">
+					<div className="flex flex-col max-xs:items-center gap-4">
 						<p className="font-semibold">
 							{project.translations[locale].summary}
 						</p>

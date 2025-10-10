@@ -10,6 +10,7 @@
 
 	--breakpoint-tablet: 80rem;
 	--breakpoint-phone: 57rem;
+	--breakpoint-xs: 50rem;
 
 	--animate-scroll: scroll 20s linear infinite;
 
