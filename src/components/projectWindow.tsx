@@ -12,7 +12,7 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 	return (
 		<Window
 			button={
-				<button className="inverted-tr-corners group/button absolute -right-1 -top-1 bg-zinc-100 dark:bg-zinc-950 border-t-4 border-r-4 border-t-zinc-100 dark:border-t-zinc-950 border-r-zinc-100 dark:border-r-zinc-950 p-5 text-black dark:text-white rounded-bl-lg cursor-pointer transition-colors duration-300">
+				<button className="inverted-tr-corners group/button absolute -right-1 -top-1 bg-zinc-100 dark:bg-zinc-950 border-t-4 border-r-4 border-t-zinc-100 dark:border-t-zinc-950 border-r-zinc-100 dark:border-r-zinc-950 p-5 text-black dark:text-white rounded-bl-lg dark:border-b-2 dark:border-b-zinc-800 dark:border-l-2 dark:border-l-zinc-800 cursor-pointer transition-colors duration-300">
 					<ArrowUpRightIcon
 						size={24}
 						weight="bold"

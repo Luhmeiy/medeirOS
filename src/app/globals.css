@@ -102,9 +102,16 @@
 	}
 
 	@variant dark {
-		&:before,
-		&:after {
+		&:before {
+			border-top: solid 2px oklch(27.4% 0.006 286.033);
+			top: -2px;
 			box-shadow: 10px 0 0 0 oklch(14.1% 0.005 285.823);
+		}
+
+		&:after {
+			border-right: solid 2px oklch(27.4% 0.006 286.033);
+			box-shadow: 10px 0 0 0 oklch(14.1% 0.005 285.823);
+			right: -2px;
 		}
 	}
 }
