@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { cloneElement, useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 import {
 	ArrowsInSimpleIcon,
@@ -37,7 +37,7 @@ const Window = ({
 
 	return (
 		<>
-			{React.cloneElement(button, {
+			{cloneElement(button, {
 				onClick: () => {
 					setIsOpen(true);
 					handleClick();

@@ -67,6 +67,13 @@ const ProjectWindow = ({ project }: { project: IProject }) => {
 						{project.translations[locale].text}
 					</p>
 				</div>
+
+				<div className="grid grid-cols-2 max-phone:grid-cols-1 gap-4">
+					{project.images &&
+						project.images.map((image) => (
+							<img key={image} src={image} />
+						))}
+				</div>
 			</div>
 		</Window>
 	);

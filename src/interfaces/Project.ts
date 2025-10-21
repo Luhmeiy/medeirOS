@@ -5,6 +5,7 @@ export interface IProject {
 	github: string;
 	preview: string;
 	thumbnail: string;
+	images: string[];
 	translations: {
 		[key in "en" | "pt"]: {
 			summary: string;
