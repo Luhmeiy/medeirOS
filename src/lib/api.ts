@@ -4,9 +4,10 @@ import { ISkill, ISkillGroup } from "@/interfaces/Skill";
 const baseUrl = `${process.env.API_URL}/api`;
 
 const get = <T>(endpoint: string): Promise<T> =>
-	fetch(`${baseUrl}${endpoint}`, { cache: "force-cache" }).then((res) =>
-		res.json()
-	);
+	fetch(`${baseUrl}${endpoint}`, {
+		cache: "force-cache",
+		next: { revalidate: 600 },
+	}).then((res) => res.json());
 
 export const portfolioAPI = {
 	getProjects: () => get<IProject[]>("/projects"),
